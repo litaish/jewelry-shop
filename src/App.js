@@ -1,9 +1,8 @@
-const App = () => {
-  return (
-    <div className="App">
+import React from 'react';
+import styles from './App.module.css';
 
-    </div>
-  );
-}
+const App = () => {
+  return <div className={styles.layout}>test :D</div>;
+};
 
 export default App;
