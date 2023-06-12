@@ -11,7 +11,7 @@ const Navbar = () => {
           <NavLink to='/'>Home</NavLink>
         </li>
         <li>
-        <NavLink to='/shop'>Shop</NavLink>
+          <NavLink to='/shop'>Shop</NavLink>
         </li>
       </ul>
       <h3 className={styles.logo}>Gemluxe</h3>

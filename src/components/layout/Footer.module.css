@@ -12,24 +12,24 @@
   gap: 1.4rem;
 }
 .socials__container > p {
-    color: #2E2E2E;
-    font-size: 1.6rem;
-    font-weight: 400;
-    letter-spacing: 5%;
-    text-transform: uppercase;
-    margin: 0;
+  color: #2e2e2e;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 5%;
+  text-transform: uppercase;
+  margin: 0;
 }
 .socials__icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
 }
 .footer > div:last-child {
-    justify-self: end;
+  justify-self: end;
 }
 .attribution {
-    color: #FFFFFF;
-    font-size: 1.6rem;
-    font-weight: 500;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 500;
 }

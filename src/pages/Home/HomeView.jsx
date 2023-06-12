@@ -5,8 +5,8 @@ import Hero from './Hero';
 const HomeView = () => {
   return (
     <div className={styles.background}>
-    <Hero />
-  </div>
+      <Hero />
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ShopView= () => {
+const ShopView = () => {
   return <div>Shop view</div>;
 };
 

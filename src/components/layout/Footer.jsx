@@ -28,7 +28,12 @@ const Footer = () => {
       </div>
       {/* Show only if current page is Home */}
       <div className={styles.attributions__container}>
-      <a className={styles.attribution} href="https://www.freepik.com/free-photo/model-demonstrating-earrings-ring_13527449.htm#query=jewelry&position=0&from_view=search&track=sph">Image by serhii_bobyk on Freepik</a>
+        <a
+          className={styles.attribution}
+          href='https://www.freepik.com/free-photo/model-demonstrating-earrings-ring_13527449.htm#query=jewelry&position=0&from_view=search&track=sph'
+        >
+          Image by serhii_bobyk on Freepik
+        </a>
       </div>
     </footer>
   );
