@@ -1,0 +1,72 @@
+.card {
+    display: grid;
+    grid-template-rows: 1fr repeat(3, 3rem);
+    gap: 1.2rem;
+}
+
+.card__name {
+    margin: 0;
+    color: #262626;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.card__desc {
+    margin: 0;
+    color: #7A7A7A;
+    font-size: 1.4rem;
+    font-weight: 400;
+    max-width: 40ch;
+}
+
+.card__price {
+    margin: 0;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.card__img {
+    cursor: pointer;
+    opacity: 1;
+    display:  block;
+    transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.card__img__container {
+    position: relative;
+}
+
+.card__img__container:hover .card__overlay {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.card__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #000000;
+}
+.card__overlay > span {
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: 0.2rem;
+    font-size: 3.6rem
+}

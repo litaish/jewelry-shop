@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 5vh;
+}
+.header > h4 {
+    margin: 0;
+    font-weight: 400;
+    color: #000000;
+    font-size: 2rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+.header > hr {
+    background-color: #D3D3D3;
+    opacity: .2;
+    height: 1px;
+    width: 100%;
+}
