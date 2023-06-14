@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ProductCard = ({ product }) => {
   return (
     <div className={styles.card}>
-        <Link to='/'>
+        <Link to='/shop/:id'>
           <div className={styles.card__img__container}>
           <ImgWithFallback className={styles.card__img} src={product.img} fallback={product.fallback} alt={product.name}/>
           <div className={styles.card__overlay}>
