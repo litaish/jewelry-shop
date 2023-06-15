@@ -16,12 +16,6 @@ html {
   box-sizing: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-
 body {
   margin: 0;
   padding: 0;

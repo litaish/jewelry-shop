@@ -1,0 +1,43 @@
+.product__view {
+    display: flex;
+    flex-direction: column;
+    padding: 3% 10%;
+}
+.product {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+}
+.product * {
+    margin: 0;
+}
+.product__image {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+.product__name {
+    color: #000000;
+    font-size: 3.2rem;
+    text-transform: capitalize;
+}
+.product__price {
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.product__desc {
+    font-size: 1.4rem;
+    color: #7A7A7A;
+    max-width: 100ch;
+}
+.product > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
