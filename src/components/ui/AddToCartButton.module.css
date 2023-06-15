@@ -7,7 +7,7 @@
     font-size: 1.6rem;
     cursor: pointer;
     padding: 1.6rem 3rem;
-    height: 25px;
+    height: auto;
     transition: .5s ease;
 }
 .button:hover {
