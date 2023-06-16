@@ -1,0 +1,38 @@
+.container {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    background-color: #ECE7E1;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6rem 2.6rem;
+    gap: 2rem;
+}
+.container * {
+    margin: 0;
+}
+.msg {
+    color: #000000;
+    font-size: 1.6rem;  
+}
+.cart__action {
+    all: unset;
+    cursor: pointer;
+    border: 1px solid #000000;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding: 1rem 1.8rem;
+    transition: .5s ease;
+}
+.cart__action:hover {
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.close {
+    all: unset;
+    cursor: pointer;
+    align-self: baseline;
+}

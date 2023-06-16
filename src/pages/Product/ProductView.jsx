@@ -4,15 +4,15 @@ import ImgWithFallback from '../../utils/ImgWithFallback';
 import AddToCartButton from '../../components/ui/AddToCartButton';
 import { NumericStepper } from '@anatoliygatt/numeric-stepper';
 import { useLocation } from 'react-router-dom';
+import Recommendations from './Recommendations';
+// import CartNotification from '../../components/ui/CartNotification';
 
 const ProductView = () => {
   const { state } = useLocation();
   const { product } = state || {}
 
   if (!product) { 
-    return (
-      <div>No product found D:</div>
-    )
+    return <h1>No product found!</h1>;
   }
 
   return (
@@ -44,9 +44,11 @@ const ProductView = () => {
         incrementButtonAriaLabel="Increment"
       /> 
             <AddToCartButton />
+            {/* <CartNotification /> */}
           </div>
         </div>
       </div>
+      <Recommendations recommendations={[]}/>
   </div>
   );
 };
