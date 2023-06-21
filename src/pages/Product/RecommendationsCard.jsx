@@ -3,6 +3,7 @@ import AddToCartButton from '../../components/ui/AddToCartButton';
 import ImgWithFallback from '../../utils/ImgWithFallback';
 import styles from './RecommendationsCard.module.css';
 import { Link } from 'react-router-dom';
+import { euro } from '../../utils/euroFormat';
 
 const RecommendationsCard = ({ product }) => {
   return (
@@ -16,7 +17,7 @@ const RecommendationsCard = ({ product }) => {
       </div>
     </Link>
     <p className={styles.card__name}>{product.name}</p>
-    <p className={styles.card__price}>{product.price}</p>
+    <p className={styles.card__price}>{euro.format(product.price)}</p>
     <AddToCartButton />
     </div>
   );

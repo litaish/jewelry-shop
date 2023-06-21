@@ -5,7 +5,7 @@ import AddToCartButton from '../../components/ui/AddToCartButton';
 import { NumericStepper } from '@anatoliygatt/numeric-stepper';
 import { useLocation } from 'react-router-dom';
 import Recommendations from './Recommendations';
-// import CartNotification from '../../components/ui/CartNotification';
+import { euro } from '../../utils/euroFormat';
 
 const ProductView = ({ handleAddToCart }) => {
   const { state } = useLocation();
@@ -23,7 +23,7 @@ const ProductView = ({ handleAddToCart }) => {
         <ImgWithFallback className={styles.product__image} src={product.img} fallback={product.fallback} alt={product.name}/>
         <div>
           <p className={styles.product__name}>{product.name}</p>
-          <p className={styles.product__price}>{product.price}</p>
+          <p className={styles.product__price}>{euro.format(product.price)}</p>
           <p className={styles.product__desc}>{product.desc}</p>
           <div className={styles.actions}>
           <NumericStepper

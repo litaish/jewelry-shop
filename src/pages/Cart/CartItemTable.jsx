@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './CartItemTable.module.css';
 import CartButton from './CartButton';
+import { euro } from '../../utils/euroFormat';
 
-const CartItemTable = ({ children }) => {
+const CartItemTable = ({ children, cartTotal }) => {
   return (
     <>
     <table className={styles.table}>
@@ -19,7 +20,7 @@ const CartItemTable = ({ children }) => {
       <tfoot>
         <tr>
           <th scope='row' className={styles.header__left}>Total</th>
-          <td className={styles.total__amount}>€3900</td>
+          <td className={styles.total__amount}>{euro.format(cartTotal)}</td>
         </tr>
       </tfoot>
     </table>

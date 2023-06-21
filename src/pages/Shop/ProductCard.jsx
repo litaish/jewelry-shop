@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ProductCard.module.css';
 import ImgWithFallback from '../../utils/ImgWithFallback';
 import { Link } from 'react-router-dom';
+import { euro } from '../../utils/euroFormat';
 
 const ProductCard = ({ product }) => {
   return (
@@ -16,7 +17,7 @@ const ProductCard = ({ product }) => {
         </Link>
         <p className={styles.card__name}>{product.name}</p>
         <p className={styles.card__desc}>{product.desc}</p>
-        <p className={styles.card__price}>{product.price}</p>
+        <p className={styles.card__price}>{euro.format(product.price)}</p>
     </div>
   );
 };

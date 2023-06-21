@@ -2,12 +2,11 @@ import React from 'react';
 import styles from './CartItem.module.css';
 import remove from '../../assets/images/icons/close_dark.png';
 import ImgWithFallback from '../../utils/ImgWithFallback';
-// Temp
-import bracelet from '../../assets/images/products/webp/bracelet1.webp';
-import fallback from '../../assets/images/products/fallback.png';
 import { NumericStepper } from '@anatoliygatt/numeric-stepper';
+import { euro } from '../../utils/euroFormat';
 
-const CartItem = () => {
+const CartItem = ({ item }) => {
+
   return (
     <tr className={styles.container}>
         <td>
@@ -15,11 +14,10 @@ const CartItem = () => {
             <button type='button' className={styles.remove}>
               <img src={remove} alt="Remove" />
             </button>
-            {/* <ImgWithFallback src={product.img} fallback={product.fallback} alt={product.name}/> */}
-            <ImgWithFallback className={styles.thumbnail} src={bracelet} fallback={fallback}/>
+            <ImgWithFallback className={styles.thumbnail} src={item.img} fallback={item.fallback}/>
             <div>
-              <p className={styles.name}>Cool bracelet</p>
-              <p className={styles.price}>€1300</p>
+              <p className={styles.name}>{item.name}</p>
+              <p className={styles.price}>{euro.format(item.price)}</p>
             </div>
           </div>
         </td>
@@ -45,7 +43,7 @@ const CartItem = () => {
         />
       </td>
       <td>
-        <p className={styles.total}>€1300</p> 
+        <p className={styles.total}>{euro.format(1300)}</p> 
       </td>
     </tr>
   );
