@@ -7,7 +7,7 @@
   padding: 2.4rem 4rem;
 }
 
-.nav a {
+.nav__page {
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: .3s;
@@ -15,7 +15,7 @@
   position: relative;
 }
 
-.nav a::after {
+.nav__page::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -29,7 +29,7 @@
   transition: transform 0.4s ease-out;
 }
 
-.nav a:hover::after {
+.nav__page:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
