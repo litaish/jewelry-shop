@@ -1,0 +1,29 @@
+.table {
+    border-collapse: collapse;
+    margin-bottom: 5rem;
+}
+.table th {
+    color: #7A7A7A;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.table thead {
+    height: 5rem;
+}
+.table tfoot th,
+.table tfoot td
+{
+    padding-top: 5rem;
+}
+.table tfoot th {
+    font-size: 2rem;
+}
+.header__left {
+    text-align: left;
+}
+.total__amount {
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 300;
+}

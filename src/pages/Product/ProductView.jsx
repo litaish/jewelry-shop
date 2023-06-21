@@ -16,7 +16,7 @@ const ProductView = () => {
   }
 
   return (
-    <div className={styles.product__view}>
+    <div className={styles.container}>
       <div className={styles.product}>
         <ImgWithFallback className={styles.product__image} src={product.img} fallback={product.fallback} alt={product.name}/>
         <div>

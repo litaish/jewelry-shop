@@ -1,0 +1,47 @@
+.container * {
+    margin: 0;
+}
+.container {
+    border-bottom: 1px solid rgba(211,211,211, .5);
+}
+.container td {
+    padding-bottom: 2rem;
+}
+.product__info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+}
+.product__info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.product__info .thumbnail {
+    width: 90px;
+    height: 90px;
+}
+.product__info .name {
+    font-weight: 300;
+    font-size: 1.8rem;
+    color: #000000;
+}
+.product__info .price {
+    font-weight: 300;
+    font-size: 1.6rem;
+    color: #000000;
+}
+.remove {
+    all: unset;
+    cursor: pointer;
+}
+.total {
+    font-size: 2rem;
+    color: #000000;
+    text-align: center;
+}
+.centered {
+   display: grid;
+   place-items: center;
+}

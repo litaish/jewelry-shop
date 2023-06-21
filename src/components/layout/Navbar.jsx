@@ -17,7 +17,9 @@ const Navbar = () => {
       <h3 className={styles.logo}>Gemluxe</h3>
       <ul className={styles.icons}>
         <li>
-          <CartWithCountIcon count={5} />
+          <NavLink to='/cart'>
+            <CartWithCountIcon count={5} />
+          </NavLink>
         </li>
       </ul>
     </nav>

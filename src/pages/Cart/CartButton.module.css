@@ -1,0 +1,15 @@
+.button {
+    all: unset;
+    background-color: #CAB9A7;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 2rem 4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: .5s ease;
+    align-self: baseline;
+}
+.button:hover {
+    background-color: #000000;
+}

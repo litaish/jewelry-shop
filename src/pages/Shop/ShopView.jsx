@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 
 const ShopView = () => {
   return (
-    <div className={styles.shop__view}>
+    <div className={styles.container}>
       <Header title={'All jewelry'}/>
       <CardGrid>
         {products?.map(product => {
