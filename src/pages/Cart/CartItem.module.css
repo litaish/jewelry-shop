@@ -5,6 +5,7 @@
     border-bottom: 1px solid rgba(211,211,211, .5);
 }
 .container td {
+    padding-top: 2rem;
     padding-bottom: 2rem;
 }
 .product__info {
