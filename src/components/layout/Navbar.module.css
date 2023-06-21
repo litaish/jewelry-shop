@@ -7,6 +7,33 @@
   padding: 2.4rem 4rem;
 }
 
+.nav a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: .3s;
+  display: inline-block;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  top: 18px;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #CAB9A7;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+.nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .nav > ul {
   list-style-type: none;
   padding: 0;
