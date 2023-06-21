@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductView.module.css';
 import ImgWithFallback from '../../utils/ImgWithFallback';
 import AddToCartButton from '../../components/ui/AddToCartButton';
@@ -7,9 +7,11 @@ import { useLocation } from 'react-router-dom';
 import Recommendations from './Recommendations';
 // import CartNotification from '../../components/ui/CartNotification';
 
-const ProductView = () => {
+const ProductView = ({ handleAddToCart }) => {
   const { state } = useLocation();
   const { product } = state || {}
+
+  const [amount, setAmount] = useState(1);
 
   if (!product) { 
     return <h1>No product found!</h1>;
@@ -42,8 +44,11 @@ const ProductView = () => {
         focusRingColor="#CAB9A7"
         decrementButtonAriaLabel="Decrement"
         incrementButtonAriaLabel="Increment"
+        onChange={(value) => {
+          setAmount(value);
+        }}
       /> 
-            <AddToCartButton />
+            <AddToCartButton handleAddToCart={() => handleAddToCart(product, amount)}/>
             {/* <CartNotification /> */}
           </div>
         </div>

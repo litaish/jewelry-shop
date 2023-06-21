@@ -3,7 +3,7 @@ import styles from './Navbar.module.css';
 import CartWithCountIcon from '../ui/CartWithCountIcon';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.pages}>
@@ -18,7 +18,7 @@ const Navbar = () => {
       <ul className={styles.icons}>
         <li>
           <NavLink to='/cart'>
-            <CartWithCountIcon count={5} />
+            <CartWithCountIcon cartCount={cartCount} />
           </NavLink>
         </li>
       </ul>

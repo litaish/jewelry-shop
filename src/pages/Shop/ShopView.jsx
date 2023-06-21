@@ -7,6 +7,7 @@ import ProductCard from './ProductCard';
 
 
 const ShopView = () => {
+
   return (
     <div className={styles.container}>
       <Header title={'All jewelry'}/>

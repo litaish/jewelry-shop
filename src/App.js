@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.css';
 import NavBar from './components/layout/Navbar';
 import HomeView from './pages/Home/HomeView';
@@ -9,16 +9,38 @@ import Footer from './components/layout/Footer';
 import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
+  const [cart, setCart] = useState([]);
+
+  const handleAddToCart = (item, amount) => {
+
+    const itemMatch = cart.find(element => element.id == item.id);
+
+    // If item is found, add amount to that item 
+    if (itemMatch) {
+      setCart(prevCart => {
+        const updatedCart = prevCart.map(item => {
+          if (item.id === itemMatch.id) {
+            return {...item, amount: item.amount + amount};
+          }
+          return item;
+        });
+        return updatedCart;
+      })
+    } else {
+      setCart(prevCart => [...prevCart, {...item, amount: amount}])
+    }
+  }
+
   return (
     <div className={styles.layout}>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<HomeView />} />
-        <Route path='/shop' element={<ShopView />} />
-        <Route path='/shop/:id' element={<ProductView />} />
-        <Route path='/cart' element={<CartView />} />
-      </Routes>
-      <Footer />
+        <NavBar cartCount={cart.length}/>
+        <Routes>
+          <Route path='/' element={<HomeView />} />
+          <Route path='/shop' element={<ShopView />} />
+          <Route path='/shop/:id' element={<ProductView handleAddToCart={handleAddToCart} />} />
+          <Route path='/cart' element={<CartView cart={cart}/>} />
+        </Routes>
+        <Footer />
     </div>
   );
 };

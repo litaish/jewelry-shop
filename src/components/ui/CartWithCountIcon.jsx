@@ -2,11 +2,11 @@ import React from 'react';
 import IconShopping from './IconShopping';
 import styles from './CartWithCountIcon.module.css';
 
-const CartWithCountIcon = ({ count }) => {
+const CartWithCountIcon = ({ cartCount }) => {
   return (
     <div className={styles.icon}>
       <IconShopping className={styles.icon__cart} />
-      <span className={styles.icon__count}>{count}</span>
+      <span className={styles.icon__count}>{cartCount}</span>
     </div>
   );
 };
