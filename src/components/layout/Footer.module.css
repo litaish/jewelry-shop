@@ -26,3 +26,11 @@
   align-items: center;
   gap: 3rem;
 }
+
+@media screen and (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+    gap: 0.5rem;
+  }
+}
