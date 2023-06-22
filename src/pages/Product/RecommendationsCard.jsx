@@ -1,5 +1,4 @@
 import React from 'react';
-import AddToCartButton from '../../components/ui/AddToCartButton';
 import ImgWithFallback from '../../utils/ImgWithFallback';
 import styles from './RecommendationsCard.module.css';
 import { Link } from 'react-router-dom';
@@ -18,7 +17,6 @@ const RecommendationsCard = ({ product }) => {
     </Link>
     <p className={styles.card__name}>{product.name}</p>
     <p className={styles.card__price}>{euro.format(product.price)}</p>
-    <AddToCartButton />
     </div>
   );
 };

@@ -3,13 +3,14 @@ import styles from './Recommendations.module.css';
 import RecommendationsCard from './RecommendationsCard';
 import products from '../../data/products';
 
-const Recommendations = () => {
-  const getRecommendations = () => {
-    const shuffledCart = products.sort(() => Math.random() - 0.5);
-    return shuffledCart.slice(0, 3);
-  }
+const getRecommendations = () => {
+  return products.sort(() => Math.random() - 0.5)
+  .slice(0,3);
+}
 
-  const recommendations = getRecommendations();
+const recommendations = getRecommendations();
+
+const Recommendations = () => {
 
   return (
     <div className={styles.container}>
