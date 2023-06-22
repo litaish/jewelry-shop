@@ -49,11 +49,10 @@ const ProductView = ({ handleAddToCart }) => {
         }}
       /> 
             <AddToCartButton handleAddToCart={() => handleAddToCart(product, amount)}/>
-            {/* <CartNotification /> */}
           </div>
         </div>
       </div>
-      <Recommendations recommendations={[]}/>
+      <Recommendations />
   </div>
   );
 };
