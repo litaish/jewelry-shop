@@ -5,7 +5,7 @@ import ImgWithFallback from '../../utils/ImgWithFallback';
 import { NumericStepper } from '@anatoliygatt/numeric-stepper';
 import { euro } from '../../utils/euroFormat';
 
-const CartItem = ({ item, handleRemoveFromCart }) => {
+const CartItem = ({ item, handleRemoveFromCart, handleChangeAmount }) => {
 
   return (
     <tr className={styles.container}>
@@ -16,7 +16,7 @@ const CartItem = ({ item, handleRemoveFromCart }) => {
             </button>
             <ImgWithFallback className={styles.thumbnail} src={item.img} fallback={item.fallback}/>
             <div>
-              <p className={styles.name}>{item.name}</p>
+              <p className={styles.name}>{item.name}</p> {/* REMOVE ON CLICK LATER */}
               <p className={styles.price}>{euro.format(item.price)}</p>
             </div>
           </div>
@@ -40,10 +40,13 @@ const CartItem = ({ item, handleRemoveFromCart }) => {
           focusRingColor="#CAB9A7"
           decrementButtonAriaLabel="Decrement"
           incrementButtonAriaLabel="Increment"
+          onChange={(value) => {
+            handleChangeAmount(item, value);
+          }}
         />
       </td>
       <td>
-        <p className={styles.total}>{euro.format(1300)}</p> 
+        <p className={styles.total}>{euro.format(Number(item.price) * item.amount)}</p> 
       </td>
     </tr>
   );

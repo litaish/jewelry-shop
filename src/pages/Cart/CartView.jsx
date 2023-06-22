@@ -5,14 +5,14 @@ import CartItemTable from './CartItemTable';
 import CartItem from './CartItem';
 import EmptyCartMessage from './EmptyCartMessage';
 
-const CartView = ({ cart, cartTotal, handleRemoveFromCart }) => {
+const CartView = ({ cart, handleRemoveFromCart, handleChangeAmount }) => {
 
   let view;
 
   if (cart.length > 0) {
     view = 
-      <CartItemTable cartTotal={cartTotal}>
-        {cart?.map(item => <CartItem key={item.id} item={item} handleRemoveFromCart={handleRemoveFromCart}/>)}
+      <CartItemTable cart={cart}>
+        {cart?.map(item => <CartItem key={item.id} item={item} handleRemoveFromCart={handleRemoveFromCart} handleChangeAmount={handleChangeAmount}/>)}
       </CartItemTable>
       
   } else {

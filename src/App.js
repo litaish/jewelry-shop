@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.css';
 import NavBar from './components/layout/Navbar';
 import HomeView from './pages/Home/HomeView';
@@ -10,30 +11,19 @@ import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
-
-  useEffect(() => {
-    setCartTotal(calculateCartTotal());
-  },[cart]);
-
-  const calculateCartTotal = () => {
-    return cart.reduce((sum, currentItem) => {
-      return sum + (Number(currentItem.price) * Number(currentItem.amount));
-     }, 0);
-  }
 
   const handleAddToCart = (item, amount) => {
     const itemMatch = cart.find(element => element.id == item.id);
     // If item is found, add amount to that item 
     if (itemMatch) {
       setCart(prevCart => {
-        const updatedCart = prevCart.map(item => {
-          if (item.id === itemMatch.id) {
-            return {...item, amount: item.amount + amount};
+        const updatedCart = prevCart.map(i => {
+          if (i.id === itemMatch.id) {
+            return {...i, amount: i.amount + amount};
           }
-          return item;
+          return i;
         });
-        return updatedCart;
+        return [...updatedCart];
       })
     // If item is not found, add a new item to cart with amount property
     } else {
@@ -47,6 +37,24 @@ const App = () => {
     })
   }
 
+  const handleChangeAmount = (item, value) => {
+    const parsedValue = parseInt(value, 10);
+    
+    if (parsedValue === item.amount) {
+      return; // No need to update state if the value hasn't changed
+    }
+  
+    setCart(prevCart => {
+      const updatedCart = prevCart.map(i => {
+        if (i.id === item.id) {
+          return { ...i, amount: parsedValue };
+        }
+        return i;
+      });
+      return updatedCart;
+    });
+  };
+
   return (
     <div className={styles.layout}>
         <NavBar cartCount={cart.length}/>
@@ -54,7 +62,7 @@ const App = () => {
           <Route path='/' element={<HomeView />} />
           <Route path='/shop' element={<ShopView />} />
           <Route path='/shop/:id' element={<ProductView handleAddToCart={handleAddToCart} />} />
-          <Route path='/cart' element={<CartView cart={cart} cartTotal={cartTotal} handleRemoveFromCart={handleRemoveFromCart}/>} />
+          <Route path='/cart' element={<CartView cart={cart} handleRemoveFromCart={handleRemoveFromCart} handleChangeAmount={handleChangeAmount}/>} />
         </Routes>
         <Footer />
     </div>

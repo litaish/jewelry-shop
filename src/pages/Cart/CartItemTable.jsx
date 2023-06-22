@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './CartItemTable.module.css';
 import CartButton from './CartButton';
 import { euro } from '../../utils/euroFormat';
 
-const CartItemTable = ({ children, cartTotal }) => {
+const CartItemTable = ({ children, cart }) => {
+  const [cartTotal, setCartTotal] = useState(0);
+
+  useEffect(() => {
+    setCartTotal(calculateCartTotal());
+  }, [cart])
+
+  const calculateCartTotal = () => {
+    return cart.reduce((sum, currentItem) => {
+      return sum + (Number(currentItem.price) * Number(currentItem.amount));
+     }, 0);
+  }
+
   return (
     <>
     <table className={styles.table}>
