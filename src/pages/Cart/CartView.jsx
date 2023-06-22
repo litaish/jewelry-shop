@@ -6,22 +6,28 @@ import CartItem from './CartItem';
 import EmptyCartMessage from './EmptyCartMessage';
 
 const CartView = ({ cart, handleRemoveFromCart, handleChangeAmount }) => {
-
   let view;
 
   if (cart.length > 0) {
-    view = 
+    view = (
       <CartItemTable cart={cart}>
-        {cart?.map(item => <CartItem key={item.id} item={item} handleRemoveFromCart={handleRemoveFromCart} handleChangeAmount={handleChangeAmount}/>)}
+        {cart?.map((item) => (
+          <CartItem
+            key={item.id}
+            item={item}
+            handleRemoveFromCart={handleRemoveFromCart}
+            handleChangeAmount={handleChangeAmount}
+          />
+        ))}
       </CartItemTable>
-      
+    );
   } else {
-    view = <EmptyCartMessage />
+    view = <EmptyCartMessage />;
   }
 
   return (
     <div className={styles.container}>
-      <Header title="Cart"/>
+      <Header title='Cart' />
       {view}
     </div>
   );

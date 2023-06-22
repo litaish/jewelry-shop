@@ -5,15 +5,13 @@ import CardGrid from './CardGrid';
 import products from '../../data/products';
 import ProductCard from './ProductCard';
 
-
 const ShopView = () => {
-
   return (
     <div className={styles.container}>
-      <Header title={'All jewelry'}/>
+      <Header title={'All jewelry'} />
       <CardGrid>
-        {products?.map(product => {
-          return <ProductCard key={product.id} product={product} />
+        {products?.map((product) => {
+          return <ProductCard key={product.id} product={product} />;
         })}
       </CardGrid>
     </div>

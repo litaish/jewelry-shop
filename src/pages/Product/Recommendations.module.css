@@ -1,23 +1,23 @@
 .container {
-    margin-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 12%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 12%;
 }
 .title {
-    margin: 0;
-    color: #000000;
-    font-size: 2rem;
-    letter-spacing: 10%;
-    text-transform: uppercase;
-    margin-bottom: 3rem;
-    font-weight: 400;
+  margin: 0;
+  color: #000000;
+  font-size: 2rem;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  font-weight: 400;
 }
 .grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
 }

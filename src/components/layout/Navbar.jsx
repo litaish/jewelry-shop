@@ -8,10 +8,14 @@ const Navbar = ({ cartCount }) => {
     <nav className={styles.nav}>
       <ul className={styles.pages}>
         <li>
-          <NavLink className={styles.nav__page} to='/'>Home</NavLink>
+          <NavLink className={styles.nav__page} to='/'>
+            Home
+          </NavLink>
         </li>
         <li>
-          <NavLink className={styles.nav__page} to='/shop'>Shop</NavLink>
+          <NavLink className={styles.nav__page} to='/shop'>
+            Shop
+          </NavLink>
         </li>
       </ul>
       <h3 className={styles.logo}>Gemluxe</h3>

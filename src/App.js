@@ -13,39 +13,39 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   const handleAddToCart = (item, amount) => {
-    const itemMatch = cart.find(element => element.id == item.id);
-    // If item is found, add amount to that item 
+    const itemMatch = cart.find((element) => element.id == item.id);
+    // If item is found, add amount to that item
     if (itemMatch) {
-      setCart(prevCart => {
-        const updatedCart = prevCart.map(i => {
+      setCart((prevCart) => {
+        const updatedCart = prevCart.map((i) => {
           if (i.id === itemMatch.id) {
-            return {...i, amount: i.amount + amount};
+            return { ...i, amount: i.amount + amount };
           }
           return i;
         });
         return [...updatedCart];
-      })
-    // If item is not found, add a new item to cart with amount property
+      });
+      // If item is not found, add a new item to cart with amount property
     } else {
-      setCart(prevCart => [...prevCart, {...item, amount: amount}])
+      setCart((prevCart) => [...prevCart, { ...item, amount: amount }]);
     }
-  }
+  };
 
   const handleRemoveFromCart = (itemToRemove) => {
-    setCart(prevCart => {
-      return prevCart.filter(item => item.id !== itemToRemove.id);
-    })
-  }
+    setCart((prevCart) => {
+      return prevCart.filter((item) => item.id !== itemToRemove.id);
+    });
+  };
 
   const handleChangeAmount = (item, value) => {
     const parsedValue = parseInt(value, 10);
-    
+
     if (parsedValue === item.amount) {
       return; // No need to update state if the value hasn't changed
     }
-  
-    setCart(prevCart => {
-      const updatedCart = prevCart.map(i => {
+
+    setCart((prevCart) => {
+      const updatedCart = prevCart.map((i) => {
         if (i.id === item.id) {
           return { ...i, amount: parsedValue };
         }
@@ -57,14 +57,23 @@ const App = () => {
 
   return (
     <div className={styles.layout}>
-        <NavBar cartCount={cart.length}/>
-        <Routes>
-          <Route path='/' element={<HomeView />} />
-          <Route path='/shop' element={<ShopView />} />
-          <Route path='/shop/:id' element={<ProductView handleAddToCart={handleAddToCart} />} />
-          <Route path='/cart' element={<CartView cart={cart} handleRemoveFromCart={handleRemoveFromCart} handleChangeAmount={handleChangeAmount}/>} />
-        </Routes>
-        <Footer />
+      <NavBar cartCount={cart.length} />
+      <Routes>
+        <Route path='/' element={<HomeView />} />
+        <Route path='/shop' element={<ShopView />} />
+        <Route path='/shop/:id' element={<ProductView handleAddToCart={handleAddToCart} />} />
+        <Route
+          path='/cart'
+          element={
+            <CartView
+              cart={cart}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleChangeAmount={handleChangeAmount}
+            />
+          }
+        />
+      </Routes>
+      <Footer />
     </div>
   );
 };

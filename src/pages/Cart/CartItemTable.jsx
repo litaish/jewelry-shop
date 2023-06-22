@@ -8,35 +8,37 @@ const CartItemTable = ({ children, cart }) => {
 
   useEffect(() => {
     setCartTotal(calculateCartTotal());
-  }, [cart])
+  }, [cart]);
 
   const calculateCartTotal = () => {
     return cart.reduce((sum, currentItem) => {
-      return sum + (Number(currentItem.price) * Number(currentItem.amount));
-     }, 0);
-  }
+      return sum + Number(currentItem.price) * Number(currentItem.amount);
+    }, 0);
+  };
 
   return (
     <>
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          <th className={styles.header__left} scope='col' >Product name</th>
-          <th scope='col'>Quantity</th>
-          <th scope='col'>Total price</th>
-        </tr>
-      </thead>
-      <tbody>
-      {children}
-      </tbody>
-      <tfoot>
-        <tr>
-          <th scope='row' className={styles.header__left}>Total</th>
-          <td className={styles.total__amount}>{euro.format(cartTotal)}</td>
-        </tr>
-      </tfoot>
-    </table>
-    <CartButton text="Proceed to checkout"/>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th className={styles.header__left} scope='col'>
+              Product name
+            </th>
+            <th scope='col'>Quantity</th>
+            <th scope='col'>Total price</th>
+          </tr>
+        </thead>
+        <tbody>{children}</tbody>
+        <tfoot>
+          <tr>
+            <th scope='row' className={styles.header__left}>
+              Total
+            </th>
+            <td className={styles.total__amount}>{euro.format(cartTotal)}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <CartButton text='Proceed to checkout' />
     </>
   );
 };

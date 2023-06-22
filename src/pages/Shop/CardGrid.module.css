@@ -1,10 +1,10 @@
 .card__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.4rem;
 }
 @media screen and (max-width: 500px) {
-    .card__grid {
-        grid-template-columns: 1fr;
-    }
+  .card__grid {
+    grid-template-columns: 1fr;
+  }
 }
