@@ -4,6 +4,7 @@ import facebookIcon from '../../assets/images/socials/facebook.png';
 import instagramIcon from '../../assets/images/socials/instagram.png';
 import snapchatIcon from '../../assets/images/socials/snapchat.png';
 import twitterIcon from '../../assets/images/socials/twitter.png';
+import Attribution from './Attribution';
 
 const Footer = () => {
   return (
@@ -26,15 +27,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      {/* Show only if current page is Home */}
-      <div className={styles.attributions__container}>
-        <a
-          className={styles.attribution}
-          href='https://www.freepik.com/free-photo/model-demonstrating-earrings-ring_13527449.htm#query=jewelry&position=0&from_view=search&track=sph'
-        >
-          Image by serhii_bobyk on Freepik
-        </a>
-      </div>
+      <Attribution />
     </footer>
   );
 };
