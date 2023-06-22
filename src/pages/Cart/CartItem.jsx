@@ -5,13 +5,13 @@ import ImgWithFallback from '../../utils/ImgWithFallback';
 import { NumericStepper } from '@anatoliygatt/numeric-stepper';
 import { euro } from '../../utils/euroFormat';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, handleRemoveFromCart }) => {
 
   return (
     <tr className={styles.container}>
         <td>
           <div className={styles.product__info}>
-            <button type='button' className={styles.remove}>
+            <button onClick={() => handleRemoveFromCart(item)} type='button' className={styles.remove}>
               <img src={remove} alt="Remove" />
             </button>
             <ImgWithFallback className={styles.thumbnail} src={item.img} fallback={item.fallback}/>
@@ -26,7 +26,7 @@ const CartItem = ({ item }) => {
           minimumValue={1}
           maximumValue={200}
           stepValue={1}
-          initialValue={1}
+          initialValue={item.amount}
           size="sm"
           inactiveTrackColor="#FFFFFF"
           activeTrackColor="#ede6df"

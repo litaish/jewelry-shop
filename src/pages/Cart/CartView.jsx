@@ -5,19 +5,14 @@ import CartItemTable from './CartItemTable';
 import CartItem from './CartItem';
 import EmptyCartMessage from './EmptyCartMessage';
 
-const CartView = ({ cart }) => {
-  const getCartTotal = () => {
-    return cart.reduce((sum, currentItem) => {
-     return sum + (Number(currentItem.price) * currentItem.amount);
-    }, 0);
- }
+const CartView = ({ cart, cartTotal, handleRemoveFromCart }) => {
 
   let view;
 
   if (cart.length > 0) {
     view = 
-      <CartItemTable cartTotal={getCartTotal()}>
-        {cart?.map(item => <CartItem key={item.id} item={item}/>)}
+      <CartItemTable cartTotal={cartTotal}>
+        {cart?.map(item => <CartItem key={item.id} item={item} handleRemoveFromCart={handleRemoveFromCart}/>)}
       </CartItemTable>
       
   } else {
