@@ -4,9 +4,9 @@ import styles from './RecommendationsCard.module.css';
 import { Link } from 'react-router-dom';
 import { euro } from '../../utils/euroFormat';
 
-const RecommendationsCard = ({ product }) => {
+const RecommendationsCard = ({ product, ...rest }) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} {...rest}>
       <Link to={`/shop/${product.id}`} state={{ product: product }}>
         <div className={styles.card__img__container}>
           <ImgWithFallback

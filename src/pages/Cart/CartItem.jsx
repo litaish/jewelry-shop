@@ -7,7 +7,7 @@ import { euro } from '../../utils/euroFormat';
 
 const CartItem = ({ item, handleRemoveFromCart, handleChangeAmount }) => {
   return (
-    <tr className={styles.container}>
+    <tr className={styles.container} data-testid='cart-item'>
       <td>
         <div className={styles.product__info}>
           <button
@@ -27,7 +27,7 @@ const CartItem = ({ item, handleRemoveFromCart, handleChangeAmount }) => {
       <td className={styles.centered}>
         <NumericStepper
           minimumValue={1}
-          maximumValue={200}
+          maximumValue={1000}
           stepValue={1}
           initialValue={item.amount}
           size='sm'

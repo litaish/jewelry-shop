@@ -34,7 +34,7 @@ const CartItemTable = ({ children, cart }) => {
             <th scope='row' className={styles.header__left}>
               Total
             </th>
-            <td className={styles.total__amount}>{euro.format(cartTotal)}</td>
+            <td className={styles.total__amount} data-testid='total'>{euro.format(cartTotal)}</td>
           </tr>
         </tfoot>
       </table>

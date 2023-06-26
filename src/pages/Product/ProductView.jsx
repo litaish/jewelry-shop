@@ -33,7 +33,7 @@ const ProductView = ({ handleAddToCart }) => {
           <div className={styles.actions}>
             <NumericStepper
               minimumValue={1}
-              maximumValue={200}
+              maximumValue={1000}
               stepValue={1}
               initialValue={1}
               size='sm'
