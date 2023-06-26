@@ -15,7 +15,11 @@ const Recommendations = () => {
       <h5 className={styles.title}>You may also like...</h5>
       <div className={styles.grid}>
         {recommendations?.map((product) => (
-          <RecommendationsCard key={product.id} product={product} data-testid='recommendations-card' />
+          <RecommendationsCard
+            key={product.id}
+            product={product}
+            data-testid='recommendations-card'
+          />
         ))}
       </div>
     </div>
