@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/jewelry-shop/static/css/main.48d0ed67.css",
+    "main.js": "/jewelry-shop/static/js/main.5019ac2f.js",
+    "static/media/model.jpg": "/jewelry-shop/static/media/model.5d9ff8c109bc5b50dea8.jpg",
+    "static/media/bracelet2.webp": "/jewelry-shop/static/media/bracelet2.8940c73a75ac66511806.webp",
+    "static/media/necklace1.webp": "/jewelry-shop/static/media/necklace1.6d760cf5bd36b33a3bed.webp",
+    "static/media/bracelet3.webp": "/jewelry-shop/static/media/bracelet3.bce447e41a9c70f2f1ce.webp",
+    "static/media/ring4.webp": "/jewelry-shop/static/media/ring4.fcbb26a6e24e00b08fac.webp",
+    "static/media/necklace2.webp": "/jewelry-shop/static/media/necklace2.3c4dd1da88932beb4d64.webp",
+    "static/media/ring5.webp": "/jewelry-shop/static/media/ring5.eb89cca778f1cdcbdbd2.webp",
+    "static/media/ring2.webp": "/jewelry-shop/static/media/ring2.db59c98850b3472f36c3.webp",
+    "static/media/earrings1.webp": "/jewelry-shop/static/media/earrings1.d9797727c1b4b4761c07.webp",
+    "static/media/ring3.webp": "/jewelry-shop/static/media/ring3.03057ff0be8c325da8eb.webp",
+    "static/media/ring1.webp": "/jewelry-shop/static/media/ring1.c54eb1766e5283616717.webp",
+    "static/media/bracelet1.webp": "/jewelry-shop/static/media/bracelet1.1b74e7557b02647b800b.webp",
+    "static/media/ring6.webp": "/jewelry-shop/static/media/ring6.6795dacb466872bbbafa.webp",
+    "index.html": "/jewelry-shop/index.html",
+    "main.48d0ed67.css.map": "/jewelry-shop/static/css/main.48d0ed67.css.map",
+    "main.5019ac2f.js.map": "/jewelry-shop/static/js/main.5019ac2f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48d0ed67.css",
+    "static/js/main.5019ac2f.js"
+  ]
+}
